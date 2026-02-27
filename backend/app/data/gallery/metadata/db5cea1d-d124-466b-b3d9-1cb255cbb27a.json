@@ -1,0 +1,16 @@
+{
+  "id": "db5cea1d-d124-466b-b3d9-1cb255cbb27a",
+  "filename": "db5cea1d-d124-466b-b3d9-1cb255cbb27a.png",
+  "prompt": "<lora:サノバウィッチ綾地寧々illustriousV2SANOBA_WITCHAyachi_NeneillustriousV2:0.7>, masterpiece, best quality, ultra-detailed, highres",
+  "negative_prompt": "worst quality, low quality, blurry, deformed, extra limbs, bad anatomy, watermark, text",
+  "checkpoint": "illustriousXL_v01.safetensors [3e15ba0038]",
+  "params": {
+    "steps": 20,
+    "cfg_scale": 7.0,
+    "width": 832,
+    "height": 1216,
+    "seed": 652357839,
+    "sampler_name": "Euler a"
+  },
+  "created_at": "2026-02-27T22:03:44.732350"
+}
