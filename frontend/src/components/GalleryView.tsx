@@ -116,6 +116,7 @@ export function GalleryView({ onCompare }: Props) {
 
                                 {/* 比較選択ボタン */}
                                 <button
+                                    aria-label={isSelectedForCompare ? "比較から外す" : "比較に追加"}
                                     onClick={(e) => toggleCompare(item, e)}
                                     style={{
                                         position: 'absolute', top: 8, right: 8,
@@ -136,7 +137,7 @@ export function GalleryView({ onCompare }: Props) {
                                     opacity: 0, transition: 'opacity 0.2s',
                                 }} className="hover-info">
                                     <span style={{ fontSize: 11, color: '#fff', opacity: 0.8 }}>{item.params.steps}s / {item.params.cfg_scale}cf</span>
-                                    <button onClick={(e) => handleDelete(item.id, e)} style={{ border: 'none', background: 'transparent', color: '#ff4d4f', cursor: 'pointer' }}>
+                                    <button aria-label="画像を削除" onClick={(e) => handleDelete(item.id, e)} style={{ border: 'none', background: 'transparent', color: '#ff4d4f', cursor: 'pointer' }}>
                                         <Trash2 size={14} />
                                     </button>
                                 </div>
@@ -182,7 +183,7 @@ export function GalleryView({ onCompare }: Props) {
                     <div style={modalContentStyle} onClick={e => e.stopPropagation()}>
                         <div style={{ flex: 1, minWidth: 0, position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#000' }}>
                             <img src={`/api/gallery/image/${selectedItem.id}`} style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
-                            <button onClick={() => setSelectedItem(null)} style={{ position: 'absolute', top: 20, right: 20, padding: 8, borderRadius: '50%', background: 'rgba(0,0,0,0.5)', border: 'none', color: '#fff', cursor: 'pointer' }}>
+                            <button aria-label="詳細を閉じる" onClick={() => setSelectedItem(null)} style={{ position: 'absolute', top: 20, right: 20, padding: 8, borderRadius: '50%', background: 'rgba(0,0,0,0.5)', border: 'none', color: '#fff', cursor: 'pointer' }}>
                                 <X size={20} />
                             </button>
                         </div>
@@ -198,7 +199,7 @@ export function GalleryView({ onCompare }: Props) {
                                     <label style={labelStyle}>Prompt</label>
                                     <div style={{ ...contentStyle, position: 'relative' }}>
                                         {selectedItem.prompt}
-                                        <button onClick={() => handleCopyPrompt(selectedItem.prompt)} style={copyBtnStyle} title="コピー"><Clipboard size={12} /></button>
+                                        <button aria-label="プロンプトをコピー" onClick={() => handleCopyPrompt(selectedItem.prompt)} style={copyBtnStyle} title="コピー"><Clipboard size={12} /></button>
                                     </div>
                                 </div>
                                 <div style={infoGroupStyle}>
@@ -222,7 +223,7 @@ export function GalleryView({ onCompare }: Props) {
                                         <Download size={14} /> 画像を保存
                                     </button>
                                 </a>
-                                <button onClick={(e) => handleDelete(selectedItem.id, e)} style={{ ...actionBtnStyle, color: '#ff4d4f' }}>
+                                <button aria-label="画像を削除" onClick={(e) => handleDelete(selectedItem.id, e)} style={{ ...actionBtnStyle, color: '#ff4d4f' }}>
                                     <Trash2 size={14} />
                                 </button>
                             </div>
